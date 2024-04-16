@@ -144,28 +144,28 @@ class SystemTrayApp(QtWidgets.QWidget):
         layout.addWidget(self.channel_label)
 
         self.previous_button = QPushButton()
-        self.previous_button.setIcon(QtGui.QIcon(resource_path("left.png")))
+        self.previous_button.setIcon(QtGui.QIcon(resource_path("YourName.png")))
         self.previous_button.setIconSize(button_size)
         self.previous_button.setMinimumSize(button_size)
         self.previous_button.clicked.connect(self.play_previous_channel)
         self.previous_button.setStyleSheet(buttons_css)
 
         self.play_button = QPushButton()
-        self.play_button.setIcon(QtGui.QIcon(resource_path("play.png")))
+        self.play_button.setIcon(QtGui.QIcon(resource_path("YourName.png")))
         self.play_button.setIconSize(button_size)
         self.play_button.setMinimumSize(button_size)
         self.play_button.clicked.connect(self.toggle_playback)
         self.play_button.setStyleSheet(buttons_css)
 
         self.stop_button = QPushButton()
-        self.stop_button.setIcon(QtGui.QIcon(resource_path("stop.png")))
+        self.stop_button.setIcon(QtGui.QIcon(resource_path("YourName.png")))
         self.stop_button.setIconSize(button_size)
         self.stop_button.setMinimumSize(button_size)
         self.stop_button.clicked.connect(self.player.stop)
         self.stop_button.setStyleSheet(buttons_css)
 
         self.next_button = QPushButton()
-        self.next_button.setIcon(QtGui.QIcon(resource_path("right.png")))
+        self.next_button.setIcon(QtGui.QIcon(resource_path("YourName.png")))
         self.next_button.setIconSize(button_size)
         self.next_button.setMinimumSize(button_size)
         self.next_button.clicked.connect(self.play_next_channel)
@@ -193,15 +193,15 @@ class SystemTrayApp(QtWidgets.QWidget):
 
     def update_tray_tooltip(self, state):
         if state == "Playing":
-            icon_path = resource_path("green_circle.png")
+            icon_path = resource_path("YourName.png")
         else:
-            icon_path = resource_path("red_circle.png")
+            icon_path = resource_path("YourName.png")
         self.tray_icon.setIcon(QtGui.QIcon(icon_path))
         self.tray_icon.setToolTip(state)
 
     def createTrayIcon(self):
         self.tray_icon = QtWidgets.QSystemTrayIcon(self)
-        icon_path = resource_path("design.png")  # Убедитесь, что файл действительно существует по этому пути
+        icon_path = resource_path("YourName.png")  # Убедитесь, что файл действительно существует по этому пути
         self.tray_icon.setIcon(QtGui.QIcon(icon_path))
         self.tray_icon.setToolTip("Stopped")
 
